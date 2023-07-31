@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>JS To-do</title>
+	</head>
+	<body>
+		<h1>To Do app</h1>
+		<form>
+			<ul>
+				<li>
+					<label for="todoName"
+						>Todo name <input type="text" id="todoName" name="todo_name"
+					/></label>
+				</li>
+				<li>
+					<label for="priority"
+						>Priority
+						<select id="priority" name="priority">
+							<option value="high">Urgent</option>
+							<option value="high">High</option>
+							<option value="high" selected>Medium</option>
+							<option value="high">Low</option>
+						</select>
+					</label>
+				</li>
+				<li>
+					<label for="due"
+						>Due <input type="date" id="due" name="due_date_time"
+					/></label>
+				</li>
+				<li>
+					<label for="description"
+						>Description
+						<textarea
+							type="text"
+							id="description"
+							name="description"
+						></textarea>
+					</label>
+				</li>
+			</ul>
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>
