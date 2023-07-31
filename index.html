@@ -11,47 +11,56 @@
 			Required fields are marked with <strong aria-label="Required">*</strong>
 		</p>
 		<form>
-			<ul>
+			<ul class="form-container">
 				<li>
-					<label for="todoName"
-						>Todo name *
-						<input
-							type="text"
-							id="todoName"
-							name="todo_name"
-							required
-							minlength="1"
-					/></label>
+					<label for="todoName">Todo name * </label
+					><input
+						type="text"
+						id="todoName"
+						name="todo_name"
+						required
+						minlength="1"
+					/>
 				</li>
 				<li>
-					<label for="priority"
-						>Priority
-						<select id="priority" name="priority">
-							<option value="high">Urgent</option>
-							<option value="high">High</option>
-							<option value="high" selected>Medium</option>
-							<option value="high">Low</option>
-						</select>
-					</label>
+					<label for="priority">Priority </label
+					><select id="priority" name="priority">
+						<option value="high">Urgent</option>
+						<option value="high">High</option>
+						<option value="high" selected>Medium</option>
+						<option value="high">Low</option>
+					</select>
 				</li>
 				<li>
-					<label for="due"
-						>Due
-						<input type="date" id="due" name="due_date_time" min="2023-07-01"
-					/></label>
+					<label for="due">Due</label>
+					<input type="date" id="due" name="due_date_time" min="2023-07-01" />
 				</li>
 				<li>
-					<label for="description"
-						>Description
-						<textarea
-							type="text"
-							id="description"
-							name="description"
-						></textarea>
-					</label>
+					<label for="description">Description </label>
+					<textarea type="text" id="description" name="description"></textarea>
 				</li>
 			</ul>
 			<button type="submit">Submit</button>
 		</form>
 	</body>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		ul {
+			margin: 0;
+			padding: 0;
+		}
+
+		li {
+			list-style: none;
+		}
+
+		.form-container {
+			width: 500px;
+			display: flex;
+			flex-direction: column;
+		}
+	</style>
 </html>
