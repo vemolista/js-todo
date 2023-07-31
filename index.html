@@ -34,7 +34,7 @@
 				</div>
 				<div class="input-container">
 					<label for="due">Due</label>
-					<input type="date" id="due" name="due_date_time" min="2023-07-01" />
+					<input type="date" id="due" name="due_date" min="2023-07-01" />
 				</div>
 				<div class="input-container">
 					<label for="description">Description </label>
@@ -44,7 +44,8 @@
 					Submit
 				</button>
 			</form>
-			<ul id="todo-list-container"></ul>
+			<h2>To Do list</h2>
+			<div class="todo-list-container" id="todo-list-container"></div>
 		</div>
 	</body>
 	<style>
@@ -56,6 +57,15 @@
 
 		body {
 			margin: 0;
+		}
+
+		form {
+			margin-bottom: 3rem;
+		}
+
+		p {
+			margin: 0px;
+			padding: 0px;
 		}
 
 		.app-container {
@@ -79,6 +89,28 @@
 
 		label {
 			margin-bottom: 0.3rem;
+		}
+
+		.todo-list-container {
+			width: 70%;
+		}
+
+		.todo {
+			display: flex;
+			flex-direction: column;
+
+			border: 1px solid gray;
+			border-radius: 0.5rem;
+
+			margin-bottom: 0.5rem;
+			padding: 0.5rem 0.5rem;
+
+			list-style: none;
+		}
+
+		.todo-name {
+			font-weight: 700;
+			margin-bottom: 0.2rem;
 		}
 	</style>
 	<script>
@@ -121,8 +153,24 @@
 			if (!todos) return;
 
 			todos.map((i) => {
-				todo = document.createElement("li");
-				todo.textContent = i.todo_name;
+				todo = document.createElement("div");
+				todo.classList.add("todo");
+
+				todoName = document.createElement("p");
+				todoName.classList.add("todo-name");
+				todoName.textContent = i.todo_name;
+
+				due = document.createElement("p");
+				due.classList.add("todo-due");
+				due.textContent = i.due_date;
+
+				priority = document.createElement("p");
+				priority.classList.add("todo-priority");
+				priority.textContent = i.priority;
+
+				todo.appendChild(todoName);
+				todo.appendChild(priority);
+				todo.appendChild(due);
 
 				todoListContainer.appendChild(todo);
 			});
