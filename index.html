@@ -7,11 +7,20 @@
 	</head>
 	<body>
 		<h1>To Do app</h1>
+		<p>
+			Required fields are marked with <strong aria-label="Required">*</strong>
+		</p>
 		<form>
 			<ul>
 				<li>
 					<label for="todoName"
-						>Todo name <input type="text" id="todoName" name="todo_name"
+						>Todo name
+						<input
+							type="text"
+							id="todoName"
+							name="todo_name"
+							required
+							minlength="1"
 					/></label>
 				</li>
 				<li>
@@ -27,7 +36,13 @@
 				</li>
 				<li>
 					<label for="due"
-						>Due <input type="date" id="due" name="due_date_time"
+						>Due
+						<input
+							type="date"
+							id="due"
+							name="due_date_time"
+							required
+							min="2023-07-01"
 					/></label>
 				</li>
 				<li>
